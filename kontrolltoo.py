@@ -1,12 +1,12 @@
 #VARIANT 2
 #1
-n=int(input("Sisestage arv vahemikus 1 kuni 9: ")) 
-for i in range(n):
+n=int(input("Sisestage arv vahemikus 1 kuni 9: ")) #palume kasutajal sisestada arv vahemikus 1 kuni 9
+for i in range(n): #Funktsiooni print abil valime sümbolid
     print("(\_/)", end=" ")
     if i<n-1:
         print(" ", end=" ")
 print( )
-for i in range(n):
+for i in range(n): #ja seejärel kontrollige muutujat. See jagab jänesed omavahel ära
         print("(o o)", end=" ")
         if i<n-1:
             print(" ", end=" ")
@@ -15,17 +15,19 @@ for i in range(n):
     print("/ | \*", end="")
     if i<n-1:
         print(" ", end=" ")
+        
  #2
-L=int(input("Sisestage number L: ")) 
-summ=0 
-for i in range(L+1): 
-    summ += i 
-print("Numnbrite summa 0 kuni L on: ", summ) 
+L=int(input("Sisestage number L: ")) #Küsime kasutajalt numbrit L
+summ=0 #Initsialiseerige muutuja summa jaoks
+for i in range(L+1): #Tsükkel, mis läheb 0-st L-ni (kaasa arvatud)
+    summ += i #Lisage summale praegune arv
+print("Numnbrite summa 0 kuni L on: ", summ) #Väljutage arvude summa 0-st L-ni
+
  #3
-from random import *
-number=randint(1,100)
-katsed=10
-while katsed>0:
+from random import * #Juhusliku arvu importimine
+number=randint(1,100) 
+katsed=10 #Anname kasutajale 10 katset arvu ära arvata
+while katsed>0: 
     külaline=int(input("Arva ära arv vahemikus 1 kuni 100: "))
     if külaline==number:
         print("Palju õnne, arvasite numbri ära! ")
@@ -34,29 +36,31 @@ while katsed>0:
         katsed -=1
         print(f"Vale! Teil on jäänud {katsed} katset. ")
         if katsed==0:
-            print(f"Vabandust, olete andnud endast parima. Varjatud number oli {number}. ")
-            veelkord=input("Kas sa tahad arvata? ").lower()
+            print(f"Vabandust, olete andnud endast parima. Varjatud number oli {number}. ") 
+            veelkord=input("Kas sa tahad arvata? ").lower() #Kui kasutaja ei soovi otsustada, siis tsükkel katkeb. Kui ta tahab, katsed taastatakse 
             if veelkord.lower()=="ei":
                 break
             else:
                 katsed=10
- #4
-n=int(input("Sisestage number:  ")) #Мы спрашиваем у пользователя номер
-vastastikune_arv=0  #Инициализировать обратную переменную
+ 
+#4
+n=int(input("Sisestage number:  ")) #Küsime kasutajalt numbrit
+vastastikune_arv=0  #Initsialiseerige pöördarvu muutuja
 while n>0: 
-    ülejäänud=n%10 #Получение остатка при делении числа на 10
-    vastastikune_arv=(vastastikune_arv*10)+ülejäänud #Умножьте обратное на 10 и добавьте остаток
-    n=n/10 #Разделите исходное число на 10, чтобы перейти к следующему числу
-    print("Vastastikune arv:", vastastikune_arv) #Извлечь текущую инверсию
+    ülejäänud=n%10 #Ülejäänud osa saamine arvu 10-ga jagamisel
+    vastastikune_arv=(vastastikune_arv*10)+ülejäänud #Korrutage pöördarvu 10-ga ja lisage ülejäänud osa
+    n=n/10 #Järgmise numbri juurde liikumiseks jagage algne arv 10-ga
+    print("Vastastikune arv:", vastastikune_arv) #Väljutage praegune pöördarv
+
 #5
-n=int(input("Sisesta number")) #запрос чисел
-summa=0 #переменная сумма
-korrutis=1 #переменный продукт
+n=int(input("Sisesta number")) #numbrite päring
+summa=0 #muutuv summa
+korrutis=1 #muutuv toode
 while n>0:
-    praegune_number=n%10
-    summa+=praegune_number  
-    korrutis*=praegune_number 
+    praegune_number=n%10 
+    summa+=praegune_number  #kokkuvõte
+    korrutis*=praegune_number #korrutada
     n=n//10
-print("summa:", summa) 
-print("korrutis:", korrutis) 
+print("summa:", summa) #väljamakse summa
+print("korrutis:", korrutis) #määra väljund
 
